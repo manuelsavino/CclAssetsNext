@@ -29,18 +29,18 @@ const getSnippetById = async (id) => {
   return snippet;
 };
 
-const createSnippet = async (code, language, description, name) => {
+const createSnippet = async (markupjs, css, name, previewSource) => {
   return await faunaClient.query(
     q.Create(q.Collection('snippets'), {
-      data: { code, language, description, name },
+      data: { markupjs, css, name, previewSource },
     })
   );
 };
 
-const updateSnippet = async (id, code, language, name, description) => {
+const updateSnippet = async (id, markupjs, name, css) => {
   return await faunaClient.query(
     q.Update(q.Ref(q.Collection('snippets'), id), {
-      data: { code, language, name, description },
+      data: { markupjs, name, css },
     })
   );
 };

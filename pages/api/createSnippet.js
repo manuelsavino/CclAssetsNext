@@ -1,15 +1,18 @@
 import { createSnippet } from '../../utils/Fauna';
+// const cloudinary = require('cloudinary');
+
 export default async function handler(req, res) {
-  const { code, language, description, name } = req.body;
+  const { markupjs, css, name, previewSource } = req.body;
+
   if (req.method !== 'POST') {
     return res.status(405).json({ msg: 'Method not allowed' });
   }
   try {
     const createdSnippet = await createSnippet(
-      code,
-      language,
-      description,
-      name
+      markupjs,
+      css,
+      name,
+      previewSource
     );
     return res.status(200).json(createdSnippet);
   } catch (err) {
