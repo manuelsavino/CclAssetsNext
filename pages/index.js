@@ -14,7 +14,6 @@ export default function Home() {
       <main className=''>
         <div className='my-12'>
           <h1 className='text-red-100 text-2xl'>Reusable Snippets</h1>
-
           <Link href='/new'>
             <a className='mt-3 inline-block bg-red-800 hover:bg-red-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'>
               Create a Snippet!

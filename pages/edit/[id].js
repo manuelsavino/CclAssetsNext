@@ -13,6 +13,7 @@ export default function Home({ snippet }) {
       <main className='max-w-lg mx-auto'>
         <h1 className='text-red-100 text-2xl mb-4'>Update Snippet</h1>
         <SnippetForm snippet={snippet} />
+        {console.log(snippet)}
       </main>
     </div>
   );

@@ -7,8 +7,8 @@ export default function SnippetForm({ snippet }) {
   //TODO: configure react hook form
   const { register, handleSubmit, errors } = useForm({
     defaultValues: {
-      markupjs: snippet ? snippet.data.code : '',
-      css: snippet ? snippet.data.description : '',
+      markupjs: snippet ? snippet.data.markupjs : '',
+      css: snippet ? snippet.data.css : '',
       name: snippet ? snippet.data.name : '',
     },
   });
@@ -19,10 +19,8 @@ export default function SnippetForm({ snippet }) {
     var reader = new FileReader();
     reader.readAsDataURL(image[0]);
     reader.onloadend = async () => {
-      // console.log(reader.result);
       setPreviewSource(reader.result);
       try {
-        //TODO: create snippet
         await fetch('/api/createSnippet', {
           method: 'POST',
           body: JSON.stringify({
@@ -110,7 +108,7 @@ export default function SnippetForm({ snippet }) {
           </label>
           <textarea
             name='css'
-            id='descriptcssion'
+            id='css'
             rows='3'
             className='resize-none w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none'
             placeholder='What does the snippet do?'

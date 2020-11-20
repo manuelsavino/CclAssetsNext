@@ -7,14 +7,14 @@ export default function Snippet({ snippet }) {
   const router = useRouter();
 
   return (
-    <div className='bg-gray-100 p-4 rounded-md my-2 shadow-lg box-border flex flex-col justify-between'>
+    <div className='bg-gray-100 dark:bg-gray-800 p-4 rounded-md my-2 shadow-lg box-border flex flex-col justify-between'>
       <div>
         <div className='flex items-center justify-between mb-2'>
           <h2 className='text-xl text-gray-800 font-bold'>
             {snippet.data.name}
           </h2>
         </div>
-        <img className='object-scale-down' src={snippet.data.previewSource} />
+        <img className='object-scale-down h-40' src={snippet.data.image} />
       </div>
       <Link href={`/view/${snippet.id}`}>
         <a className='mr-2 bg-purple-600 text-white rounded px-5 py-1 self-start'>

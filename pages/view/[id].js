@@ -30,12 +30,12 @@ export default function Home({ snippet }) {
 
       <main className='max-w-xlg mx-auto'>
         <Link href='/'>
-          <button className='bg-purple-600 text-white rounded px-5 py-1'>
+          <button className='bg-purple-600 text-white rounded px-5 py-1 mb-5'>
             Go Back
           </button>
         </Link>
         <h1 className='text-white text-4xl mb-4'>{snippet.data.name}</h1>
-        <img className='mb-5' src={snippet.data.previewSource} />
+        <img className='mb-5' src={snippet.data.image} />
 
         {snippet.data.css && <Code label='CSS' view code={snippet.data.css} />}
         <Code label='Markup / JS' view code={snippet.data.markupjs} />

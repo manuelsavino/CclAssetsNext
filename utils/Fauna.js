@@ -29,10 +29,10 @@ const getSnippetById = async (id) => {
   return snippet;
 };
 
-const createSnippet = async (markupjs, css, name, previewSource) => {
+const createSnippet = async (markupjs, css, name, image) => {
   return await faunaClient.query(
     q.Create(q.Collection('snippets'), {
-      data: { markupjs, css, name, previewSource },
+      data: { markupjs, css, name, image },
     })
   );
 };
